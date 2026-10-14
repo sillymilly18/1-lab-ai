@@ -68,7 +68,8 @@ RUN_INTEGRATION=1 .venv/bin/python -m pytest -m integration -v
 
 - [Архитектура, ограничения и демонстрация](docs/lab1-run.md).
 - [Отчёт и результаты эксперимента](docs/lab1-report.md).
-- [Полные ответы модели и токены](docs/lab1-experiment.json).
+- [12 ответов через Telegram](docs/lab1-experiment.json) и [таблица](docs/lab1-experiment.csv).
+- [Предварительные API-запуски с токенами](docs/lab1-api-experiment.json).
 - [Справка исходного шаблона: локальный Python, облако, скрипты](docs/template-readme.md).
 
 Повторить программный эксперимент на работающем контейнере:
@@ -80,5 +81,6 @@ docker compose exec -T bot python - --output - < scripts/experiment.py > outputs
 
 Скрипт получает 12 реальных ответов и сравнивает неполную и улучшенную инструкции.
 Для каждого запроса обработчик `/reset` вызывается программно с временным user_id.
-Скрипт не отправляет сообщения в Telegram. Для выполнения буквального требования ТЗ
-повторите 12 запусков в личном чате, как описано в `docs/lab1-run.md`.
+Скрипт не отправляет сообщения в Telegram. Отдельный эксперимент из 12 запусков
+через Telegram уже выполнен студентом; результаты находятся в `docs/lab1-experiment.json`.
+Протокол повторного проведения описан в `docs/lab1-run.md`.
