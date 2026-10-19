@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-19",
+  "timezone": "Europe/Moscow",
+  "scenario": "По протоколу бот временно направляется на недоступный адрес API; затем обычная конфигурация восстанавливается.",
+  "fault_endpoint_from_protocol": "http://127.0.0.1:1/v1",
+  "question": "Что выводит print(2 + 3)?",
+  "observed_error_message": "Не удалось получить ответ модели. Попробуй ещё раз чуть позже.",
+  "error_evidence": "Скриншот личного Telegram-чата, предоставленный студентом, 19:37.",
+  "fault_endpoint_active_at_later_inspection": false,
+  "normal_endpoint_restored": true,
+  "healthcheck": "polling работает, PostgreSQL отвечает SELECT 1",
+  "recovery_verification": "Отдельный реальный API-запрос из контейнера бота к Qwen2.5:1.5b завершился успешно и указал результат 5; пользовательские сообщения этим запросом не создавались.",
+  "telegram_recovery_screenshot_received": false,
+  "notes": "На момент проверки адрес API уже был обычным. Не утверждается, что сам процесс Ollama останавливался: демонстрация использует недоступный адрес подключения.",
+  "successful_test_turn_present_in_database_after_recovery": true
+}

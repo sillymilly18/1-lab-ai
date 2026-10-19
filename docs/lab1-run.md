@@ -107,7 +107,8 @@ PostgreSQL двумя Telegram-пользователями до и после �
 4. Выполнено 19 октября: два личных чата сохранили настройки и контекст после
    перезапуска, вернули calculate_total и parse_input. Сброс только пользователя A
    очистил его историю, сохранив настройки и всю историю B. Результаты: [JSON](lab1-memory-demo.json).
-5. Показать длинный ответ и ошибку модели. Для длинного ответа можно временно
+5. Показать длинный ответ. Недоступность API уже продемонстрирована
+   19 октября: [протокол и результат](lab1-api-failure-demo.json). Для длинного ответа можно временно
    попросить /translate перевести большой текст; при обрыве из-за 700 токенов
    увеличить LLM_MAX_TOKENS для демонстрации и затем вернуть исходное значение.
    Ошибку API проще показать при недоступной Ollama, затем восстановить сервис.
@@ -118,7 +119,7 @@ git status --short
 # Добавляйте только исходники, тесты и учебные материалы — не секреты.
 git add README.md .env.example compose.yaml pyproject.toml app scripts/experiment.py tests docs/lab1-run.md \
   docs/lab1-report.md docs/lab1-experiment*.json docs/lab1-api-experiment.json \
-  docs/lab1-experiment.csv docs/lab1-telegram-source.txt docs/lab1-memory-demo.json \
+  docs/lab1-experiment.csv docs/lab1-telegram-source.txt docs/lab1-memory-demo.json docs/lab1-api-failure-demo.json \
   docs/template-readme.md
 git commit -m "Complete lab 1 student AI assistant"
 git tag lab1
@@ -127,5 +128,5 @@ git push origin HEAD
 git push origin lab1
 ```
 
-Тег пока не создан: остаются недоступность API и длинный ответ.
+Тег пока не создан: остаётся демонстрация длинного ответа.
 Данные отчёта заполнены. Рабочий репозиторий — sillymilly18/1-lab-ai.
