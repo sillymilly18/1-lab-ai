@@ -104,7 +104,9 @@ PostgreSQL двумя Telegram-пользователями до и после �
    Исходники и материалы публикуются в этом репозитории.
 2. Подтвердить согласование Qwen2.5:1.5b с преподавателем, если это требуется курсом.
 3. Выполнено: 12 запусков через Telegram; ответы сохранены и проанализированы.
-4. Показать два пользовательских чата, настройки и память до/после перезапуска.
+4. Выполнено 19 октября: два личных чата сохранили настройки и контекст после
+   перезапуска, вернули calculate_total и parse_input. Осталось проверить /reset
+   только пользователя A при неизменной истории B. Результаты: [JSON](lab1-memory-demo.json).
 5. Показать длинный ответ и ошибку модели. Для длинного ответа можно временно
    попросить /translate перевести большой текст; при обрыве из-за 700 токенов
    увеличить LLM_MAX_TOKENS для демонстрации и затем вернуть исходное значение.
@@ -116,7 +118,8 @@ git status --short
 # Добавляйте только исходники, тесты и учебные материалы — не секреты.
 git add README.md .env.example compose.yaml pyproject.toml app scripts/experiment.py tests docs/lab1-run.md \
   docs/lab1-report.md docs/lab1-experiment*.json docs/lab1-api-experiment.json \
-  docs/lab1-experiment.csv docs/lab1-telegram-source.txt docs/template-readme.md
+  docs/lab1-experiment.csv docs/lab1-telegram-source.txt docs/lab1-memory-demo.json \
+  docs/template-readme.md
 git commit -m "Complete lab 1 student AI assistant"
 git tag lab1
 # Отправить в собственный репозиторий, проверив git remote -v:
@@ -124,5 +127,5 @@ git push origin HEAD
 git push origin lab1
 ```
 
-Тег пока не создан: остаются демонстрация двух пользователей, ошибки и длинного ответа.
+Тег пока не создан: остаются независимый /reset, недоступность API и длинный ответ.
 Данные отчёта заполнены. Рабочий репозиторий — sillymilly18/1-lab-ai.

@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-19",
+  "timezone": "Europe/Moscow",
+  "method": "Два личных Telegram-чата; перезапуск только сервиса bot; сравнение метаданных и SHA-256 сохранённой истории до/после; скриншоты ответов предоставлены студентом.",
+  "before_restart": [
+    {
+      "mode": "study",
+      "temperature": 0,
+      "stored_messages": 2,
+      "user_supplied_names": [
+        "calculate_total"
+      ],
+      "history_sha256": "edf1bcdefa6b7c1b8148679101869e70974a89e36773102da852c024c75ff046",
+      "participant": "A"
+    },
+    {
+      "mode": "study",
+      "temperature": 0.7,
+      "stored_messages": 6,
+      "user_supplied_names": [
+        "calculate_total",
+        "parse_input"
+      ],
+      "history_sha256": "2f1ea8d9a6f9d58800039e700e1588c54485d586d536082dc21210ba45dea399",
+      "participant": "B"
+    }
+  ],
+  "after_restart": [
+    {
+      "mode": "study",
+      "temperature": 0,
+      "stored_messages": 2,
+      "user_supplied_names": [
+        "calculate_total"
+      ],
+      "history_sha256": "edf1bcdefa6b7c1b8148679101869e70974a89e36773102da852c024c75ff046",
+      "participant": "A"
+    },
+    {
+      "mode": "study",
+      "temperature": 0.7,
+      "stored_messages": 6,
+      "user_supplied_names": [
+        "calculate_total",
+        "parse_input"
+      ],
+      "history_sha256": "2f1ea8d9a6f9d58800039e700e1588c54485d586d536082dc21210ba45dea399",
+      "participant": "B"
+    }
+  ],
+  "history_and_settings_preserved_exactly": true,
+  "recall_question": "Какую функцию я описала последней? Ответь только её именем.",
+  "telegram_results": [
+    {
+      "participant": "A",
+      "mode": "study",
+      "temperature": 0.0,
+      "expected_latest_function": "calculate_total",
+      "observed_answer": "`calculate_total`",
+      "passed": true
+    },
+    {
+      "participant": "B",
+      "mode": "study",
+      "temperature": 0.7,
+      "expected_latest_function": "parse_input",
+      "observed_answer": "`parse_input`",
+      "passed": true
+    }
+  ],
+  "limitations": "В истории B осталась его собственная прежняя фраза calculate_total. Проверялось имя последней описанной функции; наличие старого имени не считается утечкой из A.",
+  "reset_isolation_status": "Ожидается ручной /reset только в чате A и последующая проверка базы.",
+  "prior_incomplete_response": {
+    "confirmed_finish_reason": "length",
+    "completion_tokens": 700,
+    "user_message": "Ответ модели не завершён. Попробуй задать более короткий вопрос.",
+    "failed_turn_saved": false
+  }
+}
