@@ -69,11 +69,61 @@
     }
   ],
   "limitations": "В истории B осталась его собственная прежняя фраза calculate_total. Проверялось имя последней описанной функции; наличие старого имени не считается утечкой из A.",
-  "reset_isolation_status": "Ожидается ручной /reset только в чате A и последующая проверка базы.",
+  "reset_isolation_status": "Пройдено: ручной /reset только A очистил историю A, сохранил его настройки и не изменил историю и настройки B.",
   "prior_incomplete_response": {
     "confirmed_finish_reason": "length",
     "completion_tokens": 700,
     "user_message": "Ответ модели не завершён. Попробуй задать более короткий вопрос.",
     "failed_turn_saved": false
+  },
+  "reset_isolation": {
+    "before_reset": [
+      {
+        "mode": "study",
+        "temperature": 0,
+        "stored_messages": 4,
+        "user_supplied_names": [
+          "calculate_total"
+        ],
+        "history_sha256": "b4e87cd9eda2a825e60eefaad0ea794bc60db5f8e2713c5587eee3b3b914cccd",
+        "participant": "A"
+      },
+      {
+        "mode": "study",
+        "temperature": 0.7,
+        "stored_messages": 8,
+        "user_supplied_names": [
+          "calculate_total",
+          "parse_input"
+        ],
+        "history_sha256": "a2939729c0dbca191550ead97149d3f9f19116798b790775a0a149df42aa3adc",
+        "participant": "B"
+      }
+    ],
+    "after_reset": [
+      {
+        "mode": "study",
+        "temperature": 0,
+        "stored_messages": 0,
+        "user_supplied_names": [],
+        "history_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "participant": "A"
+      },
+      {
+        "mode": "study",
+        "temperature": 0.7,
+        "stored_messages": 8,
+        "user_supplied_names": [
+          "calculate_total",
+          "parse_input"
+        ],
+        "history_sha256": "a2939729c0dbca191550ead97149d3f9f19116798b790775a0a149df42aa3adc",
+        "participant": "B"
+      }
+    ],
+    "a_history_empty": true,
+    "a_settings_preserved": true,
+    "b_history_and_settings_unchanged_exactly": true,
+    "telegram_confirmation": "Скриншот от 19 октября: после /reset и /settings у A остались /study и temperature 0.0."
   }
 }
